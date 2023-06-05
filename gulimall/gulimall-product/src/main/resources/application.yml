@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.56.10:3306/gulimall_pms
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  # thymeleaf缓存：false不开 true开  开缓存吞吐量大，开发阶段不开缓存
+  thymeleaf:
+    cache: false
+  #redis在虚拟机中位置
+  redis:
+    host: 192.168.56.10
+    port: 6379
+
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+server:
+  port: 10000
+
+#日志配置：lofo 是全都打印 error 是只打印错误的
+logging:
+  level:
+    com.atguigu.gulimall: error
+
+
+
+
